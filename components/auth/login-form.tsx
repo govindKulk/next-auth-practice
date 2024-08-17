@@ -57,6 +57,7 @@ function LoginForm() {
       backButtonLabel="Don't have an account?"
       backButtonHref='/auth/register'
       showSocial>
+
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)} className='space-y-4'>
           <div className='space-y-4'>
@@ -100,6 +101,7 @@ function LoginForm() {
               )}
             />
           </div>
+
           <FormError message={error} />
           <FormSuccess message={success} />
 

@@ -57,3 +57,26 @@
 
 `` npx prisma db push ``
 
+
+
+## Setuping Next Auth
+
+### 1. Install v5 of next-auth
+`` npm install next-auth@beta ``
+
+### 2. Add auth.ts configuration file in the root
+    import NextAuth from "next-auth"
+    import GitHub from "next-auth/providers/github"
+    import Google from "next-auth/providers/google"
+    
+    export const { auth, handlers : {GET, POST} } = NextAuth({
+        providers: [GitHub, Google],
+    })
+
+#### It expose universal auth function to use throughout the app and two methods to integrate in the apis.
+
+### 3. Add app/api/auth/[...nextauth]/route.ts api and expose GET and POST methods from @/auth.ts
+    export {GET, POST} from '@/auth';
+
+### 4. Setup AUTH_SECRET environment variable
+`` AUTH_SECRET = " " ``

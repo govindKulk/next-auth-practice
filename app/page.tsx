@@ -2,9 +2,9 @@ import LoginButton from "@/components/auth/login-button";
 import { poppins } from "@/components/font";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
-export default function Home() {
+export default  function Home() {
+
   return (
     <main
       className="flex justify-center items-center flex-col h-full
